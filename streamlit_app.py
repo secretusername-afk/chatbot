@@ -2,9 +2,9 @@ import streamlit as st
 from openai import OpenAI
 
 # Show title and description.
-st.title("💬 Chatbot")
+st.title("💬 Image Generation App")
 st.write(
-    "This is a simple chatbot that uses OpenAI's GPT-3.5 model to generate responses. "
+    "This is a simple chatbot that uses OpenAI's gpt-image-2.5-flare model to generate images. "
     "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
     "You can also learn how to build this app step by step by [following our tutorial](https://docs.streamlit.io/develop/tutorials/llms/build-conversational-apps)."
 )
@@ -41,7 +41,7 @@ else:
 
         # Generate a response using the OpenAI API.
         stream = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="gpt-image-2.5-flare",
             messages=[
                 {"role": m["role"], "content": m["content"]}
                 for m in st.session_state.messages
